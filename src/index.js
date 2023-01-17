@@ -38,9 +38,9 @@ app.get('/order', (req, res) => {
 });
 
 //Rota que recupera um pedido por ID
-app.get('/order/:id', (req, res) => {
-
-  return res.json(buscarPedidosPorId(req.params.id))
+app.get('/order/:id', checkId, (req, res) => {
+  const index = req.userIndex
+  return res.json(counter[index])
 
 });
 
